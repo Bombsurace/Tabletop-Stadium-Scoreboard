@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# NFL Scoreboard - automatic setup (DietPi first boot, Orange Pi Zero 2W)
+# Tabletop Stadium Scoreboard - automatic setup (DietPi first boot, Orange Pi Zero 2W)
 # Put this file on the SD card next to dietpi.txt. DietPi runs it once, at the
 # end of its first boot. A log is written to /var/tmp/dietpi/logs/scoreboard-setup.log
 # =============================================================================

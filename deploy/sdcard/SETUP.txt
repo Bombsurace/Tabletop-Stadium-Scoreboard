@@ -1,4 +1,4 @@
-SCOREBOARD - SD CARD THAT SETS ITSELF UP
+TABLETOP STADIUM SCOREBOARD - SD CARD THAT SETS ITSELF UP
 =========================================
 Full guide with pictures: docs/software-setup.md
 

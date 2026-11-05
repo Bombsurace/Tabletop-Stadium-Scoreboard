@@ -3,7 +3,7 @@
 Find your symptom below. Most fixes need SSH: from a computer on the same Wi-Fi, run `ssh dietpi@scoreboard` (or
 `ssh dietpi@<address>`; the address is in quick settings, by pressing and holding the screen).
 
-**Still stuck?** Open an [issue](https://github.com/Bombsurace/{{REPO}}/issues/new/choose) and include the output of
+**Still stuck?** Open an [issue](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/issues/new/choose) and include the output of
 the [log commands](#collecting-logs).
 
 - [Power](#power)
@@ -176,7 +176,7 @@ Language/Regional Options → Timezone, then `sudo systemctl restart scoreboard`
 ### Scores stop updating
 
 ESPN's feed is unofficial and occasionally changes. Check
-[Issues](https://github.com/Bombsurace/{{REPO}}/issues) for a fix, then [update](software-setup.md#updating).
+[Issues](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/issues) for a fix, then [update](software-setup.md#updating).
 
 ---
 

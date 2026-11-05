@@ -4,7 +4,7 @@ labels: [bug]
 body:
   - type: markdown
     attributes:
-      value: Thanks! Please check [Troubleshooting](https://github.com/Bombsurace/{{REPO}}/blob/main/docs/troubleshooting.md) first.
+      value: Thanks! Please check [Troubleshooting](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/blob/main/docs/troubleshooting.md) first.
   - type: dropdown
     id: area
     attributes:

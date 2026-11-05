@@ -25,7 +25,7 @@ You need: a microSD card (16–32 GB), a computer with a card reader, and your W
 ### 2. Add the setup script
 
 Download **`Automation_Custom_Script.sh`** from the
-[latest release](https://github.com/Bombsurace/{{REPO}}/releases/latest) and copy it onto the card next to
+[latest release](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/releases/latest) and copy it onto the card next to
 `dietpi.txt`. It contains the scoreboard software and installs it on first boot.
 
 > **Optional, remote access:** to reach the board from anywhere (or if your router won't let devices talk to each
@@ -108,7 +108,7 @@ sudo apt update
 sudo apt install -y git python3-venv curl iw cage chromium seatd python3-evdev
 # Raspberry Pi OS may call it chromium-browser
 
-git clone https://github.com/Bombsurace/{{REPO}}.git ~/nfl-scoreboard
+git clone https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard.git ~/nfl-scoreboard
 cd ~/nfl-scoreboard
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
@@ -168,7 +168,7 @@ cd ~/nfl-scoreboard && git pull && .venv/bin/pip install -r requirements.txt && 
 turn it into a git copy once:
 ```bash
 cd ~ && mv nfl-scoreboard nfl-scoreboard.old
-git clone https://github.com/Bombsurace/{{REPO}}.git nfl-scoreboard
+git clone https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard.git nfl-scoreboard
 cp -r nfl-scoreboard.old/.venv nfl-scoreboard.old/settings.json nfl-scoreboard/ 2>/dev/null
 sudo systemctl restart scoreboard
 ```

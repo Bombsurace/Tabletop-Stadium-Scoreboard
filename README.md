@@ -1,18 +1,18 @@
 <div align="center">
 
-# {{NAME}}
+# Tabletop Stadium Scoreboard
 
 **A live football gamecast in a 3D-printed field frame that sits on your desk or hangs on your wall.**
 
 Live score, clock, down and distance, the ball on a mini field, touchdown animations, scores by division and standings.
 It runs on a $20 single-board computer and a 7" touchscreen.
 
-![{{NAME}} render](docs/images/hero-render.png)
+![Tabletop Stadium Scoreboard render](docs/images/hero-render.png)
 
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Models: CC BY-NC-SA 4.0](https://img.shields.io/badge/models-CC%20BY--NC--SA%204.0-lightgrey.svg)](frame/LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776ab.svg)](requirements.txt)
-[![Checks](https://github.com/Bombsurace/{{REPO}}/actions/workflows/checks.yml/badge.svg)](https://github.com/Bombsurace/{{REPO}}/actions/workflows/checks.yml)
+[![Checks](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/actions/workflows/checks.yml/badge.svg)](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/actions/workflows/checks.yml)
 
 [**Build guide**](#build-it) · [**Parts list**](docs/parts.md) · [**Troubleshooting**](docs/troubleshooting.md) · [**MakerWorld**](#) · [**FAQ**](docs/faq.md)
 
@@ -98,8 +98,8 @@ Lab printer. Other parts that should work are marked *untested* in the guides.
 No hardware needed. You need Python 3.9 or newer.
 
 ```bash
-git clone https://github.com/Bombsurace/{{REPO}}.git
-cd {{REPO}}
+git clone https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard.git
+cd Tabletop-Stadium-Scoreboard
 python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -140,7 +140,7 @@ size, set the browser's device toolbar to **1024 × 600**.
 - [ ] More sports: MLB, NHL, NBA, then college
 - [ ] Optional LED end zones
 
-Ideas and requests are welcome in [Issues](https://github.com/Bombsurace/{{REPO}}/issues).
+Ideas and requests are welcome in [Issues](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/issues).
 
 ## Contributing
 
