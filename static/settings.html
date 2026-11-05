@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scoreboard Settings</title>
+<style>
+@font-face{font-family:"Board";src:url(/static/fonts/barlow-condensed-latin-700-normal.woff2) format("woff2");font-weight:700}
+:root{--bg:#0b0e12;--card:#141a21;--line:#232c36;--text:#eef2f6;--muted:#8894a1;--accent:#ffd21f;--on:#2fbf71}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:0 16px 80px}
+header{position:sticky;top:0;background:var(--bg);padding:16px 0 10px;z-index:2;display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--line)}
+h1{font:700 28px "Board",system-ui;margin:0;letter-spacing:.02em}
+h2{font:700 20px "Board",system-ui;letter-spacing:.06em;margin:0 0 10px;color:var(--accent)}
+main{max-width:720px;margin:0 auto}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:16px}
+.hint{color:var(--muted);font-size:13px;margin:-4px 0 12px}
+button{font:inherit;color:var(--text);background:#1e2630;border:1px solid var(--line);border-radius:8px;padding:9px 14px;cursor:pointer}
+button:active{transform:scale(.97)}
+button.primary{background:var(--accent);color:#111;border-color:var(--accent);font-weight:600}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btns button{flex:1}
+#nowtext{font:700 22px "Board",system-ui;margin-bottom:10px}
+.games{display:grid;gap:6px;margin-top:12px}
+.game{display:flex;justify-content:space-between;align-items:center;background:#10151b;border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer}
+.game.cur{border-color:var(--accent)}
+.game b{font:700 18px "Board",system-ui;letter-spacing:.03em}
+.game span{color:var(--muted);font-size:13px}
+.live{color:var(--on)!important;font-weight:600}
+.div{margin-bottom:10px}
+.div .dn{font-size:12px;color:var(--muted);letter-spacing:.08em;margin-bottom:4px}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.chip{position:relative;display:flex;align-items:center;gap:6px;padding:6px;border-radius:8px;background:#10151b;border:1px solid var(--line);cursor:pointer;font:700 16px "Board",system-ui}
+.chip img{width:24px;height:24px;object-fit:contain}
+.chip.on{border-color:var(--accent);background:#2a2610}
+.chip.hid{border-color:#e5484d;background:#2a1314;opacity:.75;text-decoration:line-through}
+.divchips{grid-template-columns:repeat(4,1fr)}
+.divchips .chip{justify-content:center;font-size:14px}
+select{width:auto;min-width:130px;max-width:55%}
+.chip .n{position:absolute;top:-6px;right:-6px;background:var(--accent);color:#111;border-radius:10px;font-size:11px;min-width:18px;text-align:center;padding:0 4px}
+.order{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.order .o{display:flex;align-items:center;gap:4px;background:#2a2610;border:1px solid var(--accent);border-radius:8px;padding:4px 6px 4px 10px;font:700 16px "Board",system-ui}
+.order button{padding:2px 8px}
+.opt{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.opt:first-child{border-top:0}
+.opt label{flex:1}
+.opt small{display:block;color:var(--muted)}
+input[type=number],select{width:90px;background:#10151b;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:7px}
+.sw{appearance:none;width:44px;height:26px;border-radius:13px;background:#2a323b;position:relative;cursor:pointer;flex:none;transition:.2s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s}
+.sw:checked{background:var(--on)}
+.sw:checked::after{left:21px}
+.vp{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.vp input{width:100%}
+.vp label{font-size:12px;color:var(--muted)}
+.test{padding:4px 10px;font-size:13px}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(80px);background:var(--on);color:#04150c;font-weight:600;padding:8px 16px;border-radius:20px;transition:.25s}
+#toast.show{transform:translateX(-50%)}
+@media (max-width:480px){.chips{grid-template-columns:repeat(2,1fr)}}
+.wrow{display:flex;gap:8px;margin:8px 0}.wrow select,.wrow input{flex:1;min-width:0;font:inherit;padding:10px;border-radius:8px;border:1px solid #2a3442;background:#0e1217;color:inherit}.wrow button{font:inherit;padding:10px 16px;border-radius:8px;border:0;background:#2f7dc2;color:#fff;font-weight:700}
+</style>
+</head>
+<body>
+<main>
+  <header><h1>SCOREBOARD</h1><a href="/" style="color:var(--muted);font-size:13px">open board</a></header>
+
+  <section>
+    <h2>NOW SHOWING</h2>
+    <div id="nowtext">…</div>
+    <div class="btns"><button data-ctl="prev">◀ Prev</button><button data-ctl="auto" class="primary">Auto</button><button data-ctl="next">Next ▶</button></div>
+    <div class="games" id="games"></div>
+    <p class="hint" style="margin-top:10px">Tap a game to lock it on screen. It returns to Auto 5 minutes after that game ends, or when you tap Auto.</p>
+  </section>
+
+  <section>
+    <h2>FAVORITE TEAMS</h2>
+    <p class="hint">Tap to add or remove. The first team wins when two favorites play at once (unless rotation is on).</p>
+    <div class="order" id="order"></div>
+    <div id="teams"></div>
+  </section>
+
+  <section><h2>LIVE GAME VIEW</h2><div id="liveview"></div></section>
+
+  <section>
+    <h2>ROTATION</h2>
+    <p class="hint">What shows when your favorites aren't playing: their latest games first, then scores, then standings.</p>
+    <div id="rotation"></div>
+    <div id="divwrap" class="opt" style="display:block"><label>Your divisions<small>Used when Scores or Standings is set to "My divisions"</small></label>
+      <div class="chips divchips" id="divs" style="margin-top:8px"></div></div>
+  </section>
+
+  <section>
+    <h2>HIDDEN TEAMS</h2>
+    <p class="hint">Hidden teams never rotate onto the screen and are skipped by Next/Prev, unless they're playing one of your favorites.</p>
+    <div id="hidden"></div>
+  </section>
+
+  <section id="wifisec" hidden><h2>WI-FI</h2>
+    <p class="hint" id="wifist">Checking…</p>
+    <div class="wrow"><select id="wifinet"><option value="">Tap Scan to find networks</option></select><button id="wifiscan" type="button">Scan</button></div>
+    <div class="wrow"><input id="wifipsk" type="password" placeholder="Password (blank if open)" autocomplete="off"><button id="wifigo" type="button">Connect</button></div>
+    <p class="hint" id="wifimsg">If you switch networks, this page will stop updating: join your phone to the new Wi-Fi and scan the QR code on the board again.</p>
+  </section>
+  <section><h2>BEHAVIOR</h2><div id="behavior"></div></section>
+  <section><h2>DISPLAY</h2><div id="display"></div></section>
+  <section><h2>ANIMATIONS</h2><p class="hint">Turn moments on or off. "Test" plays it on the board right now.</p><div id="anims"></div></section>
+</main>
+<div id="toast">Saved</div>
+
+<script>
+let S = null, TEAMS = [];
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function api(path, body) {
+  const r = await fetch(path, body ? {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)} : {cache: 'no-store'});
+  return r.json();
+}
+let tt; function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => el.classList.remove('show'), 1200); }
+async function save(patch) { S = await api('/api/settings', patch); renderAll(); toast('Saved'); }
+
+const BEHAVIOR = [
+  ['alert_all_favorites', 'Favorite alerts from any game', 'Show a favorite\'s touchdown even if another game is on screen'],
+  ['delay_seconds', 'TV sync delay (seconds)', 'Hold updates back so the board doesn\'t spoil the broadcast. Try 30–60.', 0, 300],
+  ['poll_live_seconds', 'Live update interval (seconds)', 'How often to check ESPN during games', 5, 120],
+];
+const LIVEVIEW = [
+  ['live_view', 'Live game look', 'Halftime, pregame and finals always use the scoreboard', [['field','Field'],['scoreboard','Scoreboard']]],
+  ['field_theme', 'Field colors & end zones', 'Midfield logo and end zone names', [['home','Home team'],['favorite','Favorite if playing'],['favorite_always','Always #1 favorite']]],
+  ['field_angle', 'Field angle', '', [['tv','TV angle'],['flat','Flat (top-down)']]],
+  ['score_bug', 'Score bar position', '', [['bottom','Bottom'],['top','Top']]],
+  ['show_last_play', 'Show last play', 'Text of the last play'],
+];
+const ROTATION = [
+  ['rotate_seconds', 'Seconds per screen', '', 3, 300],
+  ['rotate_live_favorites', 'Rotate between favorites', 'When two or more favorites play at the same time'],
+  ['other_live_mode', 'Other live games', 'When none of your favorites are playing. Scores by division: tap a game to open its gamecast', [['grid','Scores by division'],['live','One gamecast at a time'],['mix','Mix in with scores'],['off','Hide']]],
+  ['scores_scope', 'Scores', '', [['favorites','My favorites'],['divisions','My divisions'],['all','All games'],['off','Off']]],
+  ['scores_layout', 'Scores layout', '4 per screen shows one division at a time, with any teams on a bye', [['single','One at a time'],['grid','4 per screen (by division)']]],
+  ['include_last_week', 'Include last week', 'Previous week\'s finals, alongside this week\'s'],
+  ['standings_scope', 'Standings', '', [['favorites','Favorites\' divisions'],['divisions','My divisions'],['afc','AFC'],['nfc','NFC'],['league','Whole league'],['off','Off']]],
+  ['standings_layout', 'Standings layout', 'Conference shows 4 divisions side by side; Ranked lists teams by record (playoff seeds when available)', [['division','One division'],['conference','Conference'],['ranked','Ranked list']]],
+];
+const ANIMS = [['touchdown','Touchdown'],['field_goal','Field goal'],['safety','Safety'],['two_point','2-point conversion'],['extra_point','Extra point'],
+  ['first_down','First down'],['turnover','Turnover'],['red_zone','Red zone'],['kickoff','Kickoff'],['halftime','Halftime'],['final','Final']];
+
+function opt(key, label, help, control) {
+  return `<div class="opt"><label for="${key}">${label}<small>${help || ''}</small></label>${control}</div>`;
+}
+function renderAll() {
+  // favorites
+  const favs = S.favorites;
+  $('#order').innerHTML = favs.length ? favs.map((a, i) => `<span class="o">${i + 1}. ${a}
+      <button data-up="${a}" ${i ? '' : 'disabled'}>↑</button><button data-rm="${a}">✕</button></span>`).join('')
+    : '<span class="hint" style="margin:0">No favorites yet</span>';
+  $('#teams').innerHTML = TEAMS.map(d => `<div class="div"><div class="dn">${d.division.toUpperCase()}</div><div class="chips">${
+    d.teams.map(t => { const i = favs.indexOf(t.abbr); return `<div class="chip ${i >= 0 ? 'on' : ''}" data-fav="${t.abbr}">
+      <img src="${t.logo}" alt="" onerror="this.remove()">${t.abbr}${i >= 0 ? `<span class="n">${i + 1}</span>` : ''}</div>`; }).join('')}</div></div>`).join('');
+  // option lists
+  const rows = list => list.map(([k, l, h, a, b]) => {
+    if (Array.isArray(a)) return opt(k, l, h, `<select id="${k}" data-key="${k}">${a.map(([v, t]) => `<option value="${v}" ${String(S[k]) === v ? 'selected' : ''}>${t}</option>`).join('')}</select>`);
+    if (typeof S[k] === 'boolean') return opt(k, l, h, `<input type="checkbox" class="sw" id="${k}" data-key="${k}" ${S[k] ? 'checked' : ''}>`);
+    return opt(k, l, h, `<input type="number" id="${k}" data-key="${k}" min="${a}" max="${b}" value="${S[k]}">`);
+  }).join('');
+  $('#behavior').innerHTML = rows(BEHAVIOR);
+  $('#liveview').innerHTML = rows(S.live_view === 'field' ? LIVEVIEW : [LIVEVIEW[0]]);
+  $('#rotation').innerHTML = rows(ROTATION);
+  const usesDivs = S.scores_scope === 'divisions' || S.standings_scope === 'divisions';
+  $('#divwrap').style.display = usesDivs ? 'block' : 'none';
+  $('#divs').innerHTML = TEAMS.map(d => `<div class="chip ${S.selected_divisions.includes(d.division) ? 'on' : ''}" data-div="${d.division}">${d.division}</div>`).join('');
+  // hidden teams
+  $('#hidden').innerHTML = TEAMS.map(d => `<div class="div"><div class="dn">${d.division.toUpperCase()}</div><div class="chips">${
+    d.teams.map(t => `<div class="chip ${S.hidden_teams.includes(t.abbr) ? 'hid' : ''}" data-hide="${t.abbr}">
+      <img src="${t.logo}" alt="" onerror="this.remove()">${t.abbr}</div>`).join('')}</div></div>`).join('');
+  // display
+  const sel = (k, opts) => `<select id="${k}" data-key="${k}">${opts.map(([v, t]) => `<option value="${v}" ${String(S[k]) === v ? 'selected' : ''}>${t}</option>`).join('')}</select>`;
+  const vp = S.viewport;
+  $('#display').innerHTML =
+    opt('tier', 'Layout size', 'Auto picks from the screen size', sel('tier', [['auto','Auto'],['standard','Standard (7\" etc.)'],['compact','Bar: compact'],['bar','Bar'],['wide','Bar: wide']])) +
+    opt('rotate', 'Rotation', 'Auto turns a portrait-mounted bar screen sideways', sel('rotate', [['auto','Auto'],['0','0°'],['90','90°'],['180','180°'],['270','270°']])) +
+    `<div class="opt" style="display:block"><label>Use only part of the screen<small>For masking a bigger screen with your printed bezel. Pixels; 0 = full screen.</small></label>
+      <div class="vp" style="margin-top:8px">${['x','y','width','height'].map(k => `<div><label>${k}</label><input type="number" min="0" data-vp="${k}" value="${vp[k]}"></div>`).join('')}</div></div>`;
+  // animations
+  $('#anims').innerHTML = ANIMS.map(([k, l]) => `<div class="opt"><label>${l}</label><button class="test" data-test="${k}">Test</button>
+      <input type="checkbox" class="sw" data-anim="${k}" ${S.animations[k] ? 'checked' : ''}></div>`).join('');
+}
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-fav],[data-up],[data-rm],[data-ctl],[data-pin],[data-test],[data-div],[data-hide]');
+  if (!t) return;
+  const favs = [...S.favorites];
+  if (t.dataset.fav) { const a = t.dataset.fav, i = favs.indexOf(a); i >= 0 ? favs.splice(i, 1) : favs.push(a); save({favorites: favs}); }
+  else if (t.dataset.rm) { save({favorites: favs.filter(x => x !== t.dataset.rm)}); }
+  else if (t.dataset.up) { const i = favs.indexOf(t.dataset.up); [favs[i - 1], favs[i]] = [favs[i], favs[i - 1]]; save({favorites: favs}); }
+  else if (t.dataset.ctl) { api('/api/control', {action: t.dataset.ctl}).then(refresh); }
+  else if (t.dataset.pin) { api('/api/control', {action: 'pin', game_id: t.dataset.pin}).then(refresh); }
+  else if (t.dataset.div) { const d = t.dataset.div, a = [...S.selected_divisions]; const i = a.indexOf(d); i >= 0 ? a.splice(i, 1) : a.push(d); save({selected_divisions: a}); }
+  else if (t.dataset.hide) { const a = t.dataset.hide, h = [...S.hidden_teams]; const i = h.indexOf(a); i >= 0 ? h.splice(i, 1) : h.push(a); save({hidden_teams: h}); }
+  else if (t.dataset.test) { api('/api/test', {kind: t.dataset.test}).then(() => toast('Playing on board')); }
+});
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t.dataset.key) save({[t.dataset.key]: t.type === 'checkbox' ? t.checked : t.type === 'number' ? Number(t.value) : t.value});
+  else if (t.dataset.vp) save({viewport: {[t.dataset.vp]: Number(t.value)}});
+  else if (t.dataset.anim) save({animations: {[t.dataset.anim]: t.checked}});
+});
+
+// ---- Wi-Fi ----
+async function wifiRefresh() {
+  try {
+    const w = await (await fetch('/api/wifi', {cache: 'no-store'})).json();
+    document.getElementById('wifisec').hidden = !w.available;
+    if (!w.available) return w;
+    document.getElementById('wifist').textContent = w.connected ? `Connected to ${w.ssid} (${w.ip})` : 'Not connected';
+    return w;
+  } catch (e) { return {}; }
+}
+document.getElementById('wifiscan').onclick = async () => {
+  const sel = document.getElementById('wifinet');
+  sel.innerHTML = '<option value="">Scanning…</option>';
+  try {
+    const r = await (await fetch('/api/wifi/scan', {cache: 'no-store'})).json();
+    sel.innerHTML = (r.networks || []).map(n => `<option value="${esc(n.ssid)}">${esc(n.ssid)}${n.secure ? '' : ' (open)'}  ${n.signal} dBm</option>`).join('')
+      || '<option value="">No networks found</option>';
+  } catch (e) { sel.innerHTML = '<option value="">Scan failed</option>'; }
+};
+document.getElementById('wifigo').onclick = async () => {
+  const ssid = document.getElementById('wifinet').value, psk = document.getElementById('wifipsk').value, msg = document.getElementById('wifimsg');
+  if (!ssid) { msg.textContent = 'Pick a network first.'; return; }
+  if (psk && psk.length < 8) { msg.textContent = 'Wi-Fi passwords are at least 8 characters.'; return; }
+  msg.textContent = `Connecting to ${ssid}… this can take up to a minute.`;
+  const r = await fetch('/api/wifi/connect', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ssid, psk})});
+  if (!r.ok) { msg.textContent = (await r.json()).error || 'Could not start.'; return; }
+  const t0 = Date.now();
+  const tick = async () => {
+    const w = await wifiRefresh(), a = (w && w.attempt) || {};
+    if (a.state === 'connecting' && Date.now() - t0 < 150000) return setTimeout(tick, 2000);
+    msg.textContent = a.state === 'ok' ? `Connected to ${a.ssid}. If that's a different network, move your phone to it too.` :
+      a.state === 'failed' ? a.error : 'No answer from the board. It may have switched networks.';
+  };
+  setTimeout(tick, 2000);
+};
+wifiRefresh();
+
+async function refresh() {
+  const [st, games] = await Promise.all([api('/api/state'), api('/api/games')]);
+  const sc = st.screen;
+  const cur = sc.type === 'game' ? sc.game.id : null;
+  const what = sc.type === 'game' ? `${sc.game.away.abbr} @ ${sc.game.home.abbr}${sc.label ? ' (' + sc.label.toLowerCase() + ')' : ''}`
+    : sc.type === 'standings' ? `${sc.division} standings` : sc.type === 'scores' ? `${(sc.label || '').toLowerCase()} scores`
+    : sc.type === 'standings_grid' || sc.type === 'standings_ranked' ? sc.title.toLowerCase() : 'Nothing scheduled';
+  $('#nowtext').textContent = what
+    + (sc.mode === 'pinned' ? '  · locked' : '  · auto') + (st.demo ? '  · DEMO' : '') + (st.status.ok ? '' : '  · data error');
+  $('#games').innerHTML = games.length ? games.map(g => {
+    const when = g.state === 'pre' && g.start_ts ? new Date(g.start_ts * 1000).toLocaleString([], {weekday: 'short', hour: 'numeric', minute: '2-digit'}) : g.status;
+    const score = g.state === 'pre' ? '' : `${g.away_score} – ${g.home_score}`;
+    return `<div class="game ${g.id === cur ? 'cur' : ''}" data-pin="${esc(g.id)}"><b>${esc(g.away)} @ ${esc(g.home)} &nbsp;${score}</b>
+      <span class="${g.state === 'in' ? 'live' : ''}">${esc(when)}</span></div>`;
+  }).join('') : '<span class="hint">No games this week yet</span>';
+}
+
+(async () => {
+  [S, TEAMS] = await Promise.all([api('/api/settings'), api('/api/teams')]);
+  renderAll();
+  refresh();
+  setInterval(refresh, 5000);
+})();
+</script>
+</body>
+</html>

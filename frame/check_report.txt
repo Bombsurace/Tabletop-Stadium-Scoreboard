@@ -1,0 +1,54 @@
+
+== layout check (floor footprints) ==
+  21 items, no overlaps
+== wall cut-outs go all the way through ==
+  switch : open
+  USB-C  : open
+== parts vs model ==
+  [standard7]
+    front vs tray                    ok
+    screen + plugs vs tray           ok
+    screen + plugs vs front          ok
+    end zone inserts vs front        ok
+    end zone inserts vs tray         ok
+    end zone inserts vs screen       ok
+    Orange Pi + plugs vs front       ok
+    Orange Pi + plugs vs screen      ok
+    switch body vs front             ok
+    switch body vs screen            ok
+    USB-C socket vs front            ok
+    USB-C socket vs screen           ok
+    antenna vs front                 ok
+    antenna vs screen                ok
+  [wide79]
+    front vs tray                    ok
+    screen + plugs vs tray           ok
+    screen + plugs vs front          ok
+    end zone inserts vs front        ok
+    end zone inserts vs tray         ok
+    end zone inserts vs screen       ok
+    clamp tabs vs tray               ok
+    cradle vs tray                   ok
+    cradle vs front                  ok
+    Orange Pi + plugs vs front       ok
+    Orange Pi + plugs vs screen      ok
+    Orange Pi + plugs vs clamp tabs  ok
+    Orange Pi + plugs vs cradle      ok
+    switch body vs front             ok
+    switch body vs screen            ok
+    switch body vs clamp tabs        ok
+    switch body vs cradle            ok
+    USB-C socket vs front            ok
+    USB-C socket vs screen           ok
+    USB-C socket vs clamp tabs       ok
+    USB-C socket vs cradle           ok
+    antenna vs front                 ok
+    antenna vs screen                ok
+    antenna vs clamp tabs            ok
+    antenna vs cradle                ok
+  Orange Pi + plugs    vs tray: ok
+  switch body          vs tray: ok
+  USB-C socket         vs tray: ok
+  antenna              vs tray: ok
+== RESULT: ALL CLEAR ==
+

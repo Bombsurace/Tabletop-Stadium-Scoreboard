@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Created at runtime on each board
+settings.json
+logo_cache/
+*.log
+
+# Personal notes and local scratch
+TODO.md
+.DS_Store
+Thumbs.db
+
+# Built files (made by tools/build_sdcard_script.sh, attached to GitHub Releases)
+dist/

@@ -1,0 +1,42 @@
+SCOREBOARD - SD CARD THAT SETS ITSELF UP
+=========================================
+Full guide with pictures: docs/software-setup.md
+
+1. Download DietPi for "Orange Pi Zero 2W" from dietpi.com and write it to the
+   card with balenaEtcher or Raspberry Pi Imager. Unplug the card and plug it
+   back in so your computer shows the small boot drive.
+
+2. Copy Automation_Custom_Script.sh (from the latest GitHub Release) onto that
+   drive, next to dietpi.txt.
+   Optional: open it in a text editor and paste a Tailscale auth key between the
+   quotes on the TAILSCALE_AUTHKEY line. Change nothing else in it.
+
+3. Open dietpi-wifi.txt and set your Wi-Fi name and password:
+      aWIFI_SSID[0]='YourWiFiName'
+      aWIFI_KEY[0]='YourWiFiPassword'
+
+4. Open dietpi.txt, find each line below (Ctrl+F) and change it to this value.
+   Use your own password and time zone.
+      AUTO_SETUP_AUTOMATED=1
+      AUTO_SETUP_GLOBAL_PASSWORD=pick-a-password
+      AUTO_SETUP_NET_WIFI_ENABLED=1
+      AUTO_SETUP_NET_WIFI_COUNTRY_CODE=US
+      AUTO_SETUP_TIMEZONE=America/Los_Angeles
+      AUTO_SETUP_NET_HOSTNAME=scoreboard
+      AUTO_SETUP_SSH_SERVER_INDEX=-2
+      AUTO_SETUP_AUTOSTART_TARGET_INDEX=7
+      AUTO_SETUP_AUTOSTART_LOGIN_USER=dietpi
+      SURVEY_OPTED_IN=0
+      CONFIG_SERIAL_CONSOLE_ENABLE=0
+   Save, eject, and put the card in the Orange Pi.
+
+5. Plug it in and leave it 15-20 minutes. It updates, installs everything and
+   restarts by itself. If the screen sits at a text login prompt after 20
+   minutes, unplug it and plug it back in once.
+
+6. It comes up on the scoreboard. Press and hold the screen for 1 second: the
+   menu shows the board's address and a QR code for the settings page on your
+   phone.
+
+Log in from a computer:  ssh dietpi@scoreboard   (or ssh dietpi@<address from the menu>)
+Setup log on the board:  cat /var/tmp/dietpi/logs/scoreboard-setup.log

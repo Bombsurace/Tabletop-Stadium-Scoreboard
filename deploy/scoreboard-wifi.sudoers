@@ -1,0 +1,4 @@
+# Lets the scoreboard (user dietpi) change Wi-Fi through its helper, and nothing else.
+#   sudo install -m 755 deploy/scoreboard-wifi.py /usr/local/bin/scoreboard-wifi
+#   sudo install -m 440 deploy/scoreboard-wifi.sudoers /etc/sudoers.d/scoreboard-wifi
+dietpi ALL=(root) NOPASSWD: /usr/local/bin/scoreboard-wifi

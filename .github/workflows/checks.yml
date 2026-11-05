@@ -1,0 +1,36 @@
+name: Checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  software:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Python files compile
+        run: python -m py_compile server.py espn.py events.py demo.py config.py wifi.py deploy/*.py
+      - name: Demo server starts and serves the board
+        run: |
+          SCOREBOARD_SETTINGS=/tmp/s.json SCOREBOARD_LOGO_CACHE=/tmp/logos python server.py --demo --port 8099 &
+          for i in $(seq 1 20); do curl -sf localhost:8099/api/state > /tmp/state.json && break; sleep 1; done
+          python -c "import json; s=json.load(open('/tmp/state.json')); assert s['demo'] and s['screen']['type'], s"
+          curl -sf localhost:8099/ > /dev/null
+          curl -sf localhost:8099/settings > /dev/null
+      - name: SD card script builds
+        run: bash tools/build_sdcard_script.sh && bash -n dist/Automation_Custom_Script.sh
+
+  openscad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y openscad
+      - name: Customizers render with default settings
+        run: |
+          openscad -o /tmp/endzone.stl frame/openscad/endzone_customizer.scad
+          openscad -o /tmp/back.stl frame/openscad/back_customizer.scad

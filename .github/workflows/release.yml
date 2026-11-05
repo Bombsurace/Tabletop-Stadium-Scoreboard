@@ -1,0 +1,29 @@
+name: Release
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build SD card script
+        run: bash tools/build_sdcard_script.sh
+      - name: Zip the print files
+        run: |
+          cd frame
+          zip -r ../dist/print-files-${GITHUB_REF_NAME}.zip stl -x '*.step'
+          zip -r ../dist/step-files-${GITHUB_REF_NAME}.zip stl -i '*.step'
+          zip -r ../dist/openscad-customizers-${GITHUB_REF_NAME}.zip openscad LICENSE
+      - uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            dist/Automation_Custom_Script.sh
+            dist/print-files-*.zip
+            dist/step-files-*.zip
+            dist/openscad-customizers-*.zip

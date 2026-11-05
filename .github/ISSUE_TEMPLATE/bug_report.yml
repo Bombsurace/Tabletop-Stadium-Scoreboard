@@ -1,0 +1,47 @@
+name: Bug report
+description: Something isn't working on the board, the settings page, or a print
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks! Please check [Troubleshooting](https://github.com/Bombsurace/{{REPO}}/blob/main/docs/troubleshooting.md) first.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - "Software / display"
+        - "Setup / SD card"
+        - "Wi-Fi"
+        - "Touch"
+        - "Power / wiring"
+        - "3D print / fit"
+        - "OpenSCAD customizer"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: Board and screen
+      placeholder: Orange Pi Zero 2W 1GB, Hosyond 7" 1024x600
+  - type: input
+    id: os
+    attributes:
+      label: Install method and OS
+      placeholder: SD card script, DietPi 9.x
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Output of the commands in Troubleshooting → Collecting logs
+      render: shell
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photos or screenshots

@@ -1,0 +1,14 @@
+name: Feature request
+description: An idea for the board, the settings or the frame
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why? What would you use it for?

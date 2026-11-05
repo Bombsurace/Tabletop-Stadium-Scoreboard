@@ -1,0 +1,30 @@
+name: Build report
+description: Show off your build, or report parts that worked (or didn't)
+labels: [build-report]
+body:
+  - type: textarea
+    id: parts
+    attributes:
+      label: Parts used
+      description: Especially anything different from the parts list (board, screen, power socket)
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Did it work?
+      options:
+        - "Yes, all of it"
+        - "Mostly (see notes)"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes, printer and settings
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photos
+      description: Drag images here

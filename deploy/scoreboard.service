@@ -1,0 +1,18 @@
+# Runs the scoreboard server at boot.
+# Replace YOURUSER with your username, then:
+#   sudo cp deploy/scoreboard.service /etc/systemd/system/
+#   sudo systemctl enable --now scoreboard
+[Unit]
+Description=NFL desktop scoreboard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=YOURUSER
+WorkingDirectory=/home/YOURUSER/nfl-scoreboard
+ExecStart=/home/YOURUSER/nfl-scoreboard/.venv/bin/python server.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
