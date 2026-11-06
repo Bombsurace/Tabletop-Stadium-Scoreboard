@@ -7,7 +7,9 @@
 Live score, clock, down and distance, the ball on a mini field, touchdown animations, scores by division and standings.
 It runs on a $20 single-board computer and a 7" touchscreen.
 
-![Tabletop Stadium Scoreboard render](docs/images/hero-render.png)
+![Tabletop Stadium Scoreboard on a desk](docs/images/mockup-desk.png)
+
+<sub>Renders from the 3D files with real board screenshots; build photos coming soon.</sub>
 
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Models: CC BY-NC-SA 4.0](https://img.shields.io/badge/models-CC%20BY--NC--SA%204.0-lightgrey.svg)](frame/LICENSE)
@@ -28,7 +30,7 @@ It runs on a $20 single-board computer and a 7" touchscreen.
 <table>
 <tr>
 <td width="50%"><img src="docs/images/board-field.png" alt="Live game on the field view"></td>
-<td width="50%"><img src="docs/images/board-touchdown.png" alt="Touchdown animation"></td>
+<td width="50%"><img src="docs/images/touchdown.gif" alt="Touchdown animation"></td>
 </tr>
 <tr>
 <td><b>Live gamecast.</b> Ball position, line of scrimmage, first-down line, current drive, red zone, timeouts,
@@ -47,7 +49,7 @@ gamecast.</td>
 </tr>
 <tr>
 <td><img src="docs/images/board-menu.png" alt="Quick settings on the touchscreen"></td>
-<td align="center"><img src="docs/images/settings-phone.png" alt="Settings page on a phone" width="45%"></td>
+<td align="center"><img src="docs/images/mockup-phone.png" alt="Settings page on a phone" width="45%"></td>
 </tr>
 <tr>
 <td><b>Touch controls.</b> Tap for next, previous, back and settings. Press and hold for quick settings and a QR code
@@ -68,6 +70,32 @@ and Wi-Fi.</td>
   lettering. It hangs on the wall from two keyholes.
 - **Customizable.** OpenSCAD customizers make your own end zone text, a back for a different board, or move the power
   and switch holes.
+
+---
+
+## The frame
+
+<table>
+<tr>
+<td width="33%"><img src="docs/images/mockup-wall.png" alt="Hanging on a wall"></td>
+<td width="33%"><img src="docs/images/mockup-kickstand.png" alt="Kickstand, side view"></td>
+<td width="33%"><img src="docs/images/mockup-endzone.png" alt="Snap-in end zone"></td>
+</tr>
+<tr>
+<td><b>Wall.</b> Two keyholes 200 mm apart. The kickstand folds flat and clicks shut.</td>
+<td><b>Desk.</b> A print-in-place kickstand leans it back about 22°.</td>
+<td><b>Swappable end zones.</b> They snap in, with flush two-color lettering. Make your own in the customizer.</td>
+</tr>
+<tr>
+<td colspan="2"><img src="docs/images/mockup-parts.png" alt="Everything you print"></td>
+<td><img src="docs/images/mockup-inside.png" alt="Inside: every part has a labeled spot"></td>
+</tr>
+<tr>
+<td colspan="2"><b>Everything you print:</b> front, back tray (kickstand included), two end zones and two Pi clamps. No
+supports.</td>
+<td><b>Inside.</b> Every part has a labeled spot. The front lifts off with the screen attached.</td>
+</tr>
+</table>
 
 ---
 

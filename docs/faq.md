@@ -8,6 +8,12 @@ Roughly $100–130 in parts, plus under 400 g of filament. The screen and the Or
 A Raspberry Pi Zero 2 W has the same size and mounting holes, and the back tray customizer has a preset for it. The
 software runs on any Debian-based system with Python and Chromium. It's *untested* on the Pi so far; reports are welcome.
 
+**What size SD card do I need?**
+16 or 32 GB, A1-rated or faster (any well-known brand). The whole system with the scoreboard uses only a few GB, and
+future sports add almost nothing, because each one is a little code, not a separate install. 8 GB works but leaves little
+room for updates, and it's barely cheaper. A bigger card doesn't make it faster. A "high endurance" card lasts longest
+for something that runs all day.
+
 **Can I use a different screen?**
 The software adapts to any screen shape. It has layouts for 1024×600, 800×480, 1280×400 bars and more, picked
 automatically. The frame currently has fronts for the Hosyond 7" (tested) and Waveshare 7.9" bar (untested). A front

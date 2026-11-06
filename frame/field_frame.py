@@ -2,7 +2,7 @@
 
     pip install cadquery
     python field_frame.py                          # everything
-    python field_frame.py --left JAGUARS --right JACKSONVILLE
+    python field_frame.py --left HOME --right AWAY
     python field_frame.py --check                  # overlap / cutout report only
 
 Parts (all print with no supports)
@@ -811,8 +811,8 @@ def export(shape, path, step=True):
 
 def main():
     ap = argparse.ArgumentParser(description="Football field scoreboard frame")
-    ap.add_argument("--left", default="JAGUARS", help="left end zone text (reads bottom to top)")
-    ap.add_argument("--right", default="JACKSONVILLE", help="right end zone text (reads top to bottom)")
+    ap.add_argument("--left", default="HOME", help="left end zone text (reads bottom to top)")
+    ap.add_argument("--right", default="AWAY", help="right end zone text (reads top to bottom)")
     ap.add_argument("--screen", default="all", choices=["all"] + list(SCREENS))
     ap.add_argument("--font-path", default="")
     ap.add_argument("--out", default="stl")

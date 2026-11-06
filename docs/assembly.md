@@ -2,6 +2,8 @@
 
 Every part has a labeled spot on the back tray, so you can check placement as you go.
 
+![Inside the frame](images/mockup-inside.png)
+
 ![Back tray layout](images/back-tray.png)
 
 You need: the printed back tray, front, end zones and 2 Pi clamps, plus everything in the [parts list](parts.md).

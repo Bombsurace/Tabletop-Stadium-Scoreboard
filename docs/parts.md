@@ -14,7 +14,7 @@ should work but nobody has confirmed it yet; if you try one, please say how it w
 | 1 | **Orange Pi Zero 2W**, 1 GB or more | the computer. 65 × 30 mm | Tested | [Amazon](https://www.amazon.com/s?k=orange+pi+zero+2w&tag=bombsurace0c-20) |
 | — | *or* Raspberry Pi Zero 2 W | same footprint and holes; there's a back tray preset for it | *Untested* | [Amazon](https://www.amazon.com/s?k=raspberry+pi+zero+2+w&tag=bombsurace0c-20) |
 | 1 | **Hosyond 7" 1024×600 IPS touchscreen, HDMI** | the screen. Screws to the front by its 4 ears | Tested | [Amazon](https://www.amazon.com/s?k=hosyond+7+inch+1024x600+hdmi+touch&tag=bombsurace0c-20) |
-| 1 | microSD card, 16–32 GB, A1 or faster | holds the operating system | Tested | [Amazon](https://www.amazon.com/s?k=sandisk+32gb+microsd+a1&tag=bombsurace0c-20) |
+| 1 | microSD card, 16–32 GB, A1 or faster | holds the operating system. Uses a few GB; 8 GB works but is tight. A "high endurance" card lasts longest | Tested | [Amazon](https://www.amazon.com/s?k=sandisk+32gb+microsd+a1&tag=bombsurace0c-20) |
 | 1 | **90° mini-HDMI to HDMI FPC ribbon, 20 cm** (JSER CYFPV or similar) | flat ribbon; the angled end goes on the Orange Pi | Tested | [Amazon](https://www.amazon.com/s?k=jser+cyfpv+mini+hdmi+fpc+ribbon+90+degree&tag=bombsurace0c-20) |
 | 1 | **90° USB-C to micro-USB OTG data cable, 25 cm** | powers the screen and carries touch. It must be a *data* (OTG) cable | Tested | [Amazon](https://www.amazon.com/s?k=usb+c+to+micro+usb+otg+cable+90+degree+short&tag=bombsurace0c-20) |
 | 1 | Wi-Fi antenna | comes with the Orange Pi | Tested | — |

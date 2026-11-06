@@ -10,11 +10,11 @@
 
 /* [End zone text] */
 // Left end zone (reads bottom to top). Leave empty for a blank insert.
-left_text = "JAGUARS";
+left_text = "HOME";
 // Optional second line for the left end zone
 left_line_2 = "";
 // Right end zone (reads top to bottom). Leave empty for a blank insert.
-right_text = "JACKSONVILLE";
+right_text = "AWAY";
 // Optional second line for the right end zone
 right_line_2 = "";
 // Lettering font (bold fonts read best)

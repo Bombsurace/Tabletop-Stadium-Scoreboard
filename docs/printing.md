@@ -5,6 +5,8 @@ All the print files are in [`frame/stl/`](../frame/stl). Every file is already t
 
 **Frame size:** 280 × 150 × 42 mm. The largest part (280 × 150) needs a bed of at least 290 × 160 mm.
 
+![Everything you print](images/mockup-parts.png)
+
 ## Settings
 
 | Setting | Value |
