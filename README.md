@@ -7,9 +7,7 @@
 Live score, clock, down and distance, the ball on a mini field, touchdown animations, scores by division and standings.
 It runs on a $20 single-board computer and a 7" touchscreen.
 
-![Tabletop Stadium Scoreboard on a desk](docs/images/mockup-desk.png)
-
-<sub>Renders from the 3D files with real board screenshots; build photos coming soon.</sub>
+![Tabletop Stadium Scoreboard showing division scores](docs/images/photo-hero.jpg)
 
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Models: CC BY-NC-SA 4.0](https://img.shields.io/badge/models-CC%20BY--NC--SA%204.0-lightgrey.svg)](frame/LICENSE)
@@ -30,12 +28,12 @@ It runs on a $20 single-board computer and a 7" touchscreen.
 <table>
 <tr>
 <td width="50%"><img src="docs/images/board-field.png" alt="Live game on the field view"></td>
-<td width="50%"><img src="docs/images/touchdown.gif" alt="Touchdown animation"></td>
+<td width="50%"><img src="docs/images/fieldgoal.gif" alt="Field goal animation on the real board"></td>
 </tr>
 <tr>
 <td><b>Live gamecast.</b> Ball position, line of scrimmage, first-down line, current drive, red zone, timeouts,
 possession and the last play. TV-tilt or flat field, painted in the home team's colors.</td>
-<td><b>Animations.</b> Touchdown, field goal, extra point, two-point try, safety, turnover, first down, red zone,
+<td><b>Animations</b> (field goal shown). Touchdown, field goal, extra point, two-point try, safety, turnover, first down, red zone,
 kickoff, halftime and final. Each one can be turned on or off.</td>
 </tr>
 <tr>
@@ -48,7 +46,7 @@ gamecast.</td>
 <td><b>Standings.</b> By division, conference or ranked by playoff seed, rotating when nothing is live.</td>
 </tr>
 <tr>
-<td><img src="docs/images/board-menu.png" alt="Quick settings on the touchscreen"></td>
+<td><img src="docs/images/photo-quick-settings.jpg" alt="Quick settings on the touchscreen"></td>
 <td align="center"><img src="docs/images/mockup-phone.png" alt="Settings page on a phone" width="45%"></td>
 </tr>
 <tr>
@@ -73,27 +71,39 @@ and Wi-Fi.</td>
 
 ---
 
+## See it run
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/firstdown.gif" alt="First down during a live game, flat field"></td>
+<td width="50%"><img src="docs/images/tilted.gif" alt="Live games on the TV-tilt field"></td>
+</tr>
+<tr>
+<td><b>Flat field</b> during a live game, with a first down.</td>
+<td><b>TV-tilt field</b> with the score bar on top, rotating through live games.</td>
+</tr>
+</table>
+
 ## The frame
 
 <table>
 <tr>
-<td width="33%"><img src="docs/images/mockup-wall.png" alt="Hanging on a wall"></td>
-<td width="33%"><img src="docs/images/mockup-kickstand.png" alt="Kickstand, side view"></td>
-<td width="33%"><img src="docs/images/mockup-endzone.png" alt="Snap-in end zone"></td>
+<td width="33%"><img src="docs/images/photo-kickstand.jpg" alt="Kickstand, side view"></td>
+<td width="33%"><img src="docs/images/photo-side-switch.jpg" alt="Power switch and USB-C on the side"></td>
+<td width="33%"><img src="docs/images/photo-endzone.jpg" alt="Snapping in an end zone"></td>
 </tr>
 <tr>
-<td><b>Wall.</b> Two keyholes 200 mm apart. The kickstand folds flat and clicks shut.</td>
-<td><b>Desk.</b> A print-in-place kickstand leans it back about 22°.</td>
+<td><b>Desk.</b> A print-in-place kickstand leans it back about 22°, and clicks shut when folded.</td>
+<td><b>Power</b> switch and USB-C socket snap into the side wall.</td>
 <td><b>Swappable end zones.</b> They snap in, with flush two-color lettering. Make your own in the customizer.</td>
 </tr>
 <tr>
-<td colspan="2"><img src="docs/images/mockup-parts.png" alt="Everything you print"></td>
-<td><img src="docs/images/mockup-inside.png" alt="Inside: every part has a labeled spot"></td>
+<td colspan="2"><img src="docs/images/photo-open.jpg" alt="Opened up: back tray and front with the screen"></td>
+<td><img src="docs/images/mockup-wall.png" alt="Hanging on a wall (render)"></td>
 </tr>
 <tr>
-<td colspan="2"><b>Everything you print:</b> front, back tray (kickstand included), two end zones and two Pi clamps. No
-supports.</td>
-<td><b>Inside.</b> Every part has a labeled spot. The front lifts off with the screen attached.</td>
+<td colspan="2"><b>Inside.</b> Every part has a labeled spot. The front lifts off with the screen attached.</td>
+<td><b>Wall.</b> Two keyholes 200 mm apart (render).</td>
 </tr>
 </table>
 

@@ -40,6 +40,8 @@ too; use the size slider if a font comes out too big or small.
 
 ## Back tray
 
+![Back tray options](../../docs/images/back-customizer-options.png)
+
 **Settings:**
 - **Board:** Orange Pi Zero 2W (tested), Raspberry Pi Zero 2 W (same footprint), or Custom (length, width, hole spacing
   both ways, hole size, tallest part). Held by pegs + 2 swivel clamps, or screw posts. The board can be moved, and turned 0/90/180/270° so its ports face

@@ -10,7 +10,7 @@
 | **Tap a game** on a scores screen | opens that game's gamecast |
 | **Press and hold about 1 second** | quick settings, plus the board's address and a QR code for the full settings page on your phone |
 
-![Quick settings](images/board-menu.png)
+![Quick settings](images/photo-quick-settings.jpg)
 
 Prev and Next **lock** the game on screen. It goes back to Auto 5 minutes after that game ends, or tap **Back**.
 

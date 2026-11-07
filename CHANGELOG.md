@@ -5,6 +5,7 @@
 First public version.
 
 **Software**
+- Smoother touchdown and red zone animations on slow boards (GPU-only pulse instead of re-drawing a blurred glow every frame)
 - Live NFL gamecast: field view (TV tilt or flat) and scoreboard view, animations for scoring plays, turnovers, first
   downs, red zone, kickoff, halftime and final
 - Scores by division (4 per screen, with byes), standings by division, conference or playoff seed

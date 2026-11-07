@@ -2,7 +2,7 @@
 
 Every part has a labeled spot on the back tray, so you can check placement as you go.
 
-![Inside the frame](images/mockup-inside.png)
+![Opened up: back tray and front](images/photo-open.jpg)
 
 ![Back tray layout](images/back-tray.png)
 
@@ -38,6 +38,8 @@ Orange Pi mini-HDMI    ──► 90° FPC ribbon                  ──► scre
 3. Swing a clamp over each of the two clamp corners and screw it down with an M3 × 8 screw until snug. To lift the
    board out later, loosen the screws and swing the clamps aside.
 
+<img src="images/photo-wiring.jpg" alt="Wiring inside the tray" width="320" align="right">
+
 ### 2. Antenna
 
 Plug the antenna into the Orange Pi and press its thick ends down into the two C-clips marked **ANTENNA**. Either end
@@ -51,9 +53,13 @@ can face the board.
 ### 4. Screen
 
 1. Lay the front face down on a soft towel.
-2. Set the 7" screen face down in it, **ports toward the right end**.
+2. Set the 7" screen face down in it with its **ports toward the right end** as seen from the front. With the front lying face down, that is the left side, as in the photo below.
 3. Screw its 4 ears to the 4 posts with M3 × 8–10 screws.
-4. Plug in the FPC ribbon (HDMI) and the USB-C to micro-USB cable (Touch port on the screen).
+4. Plug in the FPC ribbon (HDMI) and the USB-C to micro-USB cable. The screen has two ports labeled Touch; either works.
+
+![Screen mounted in the front](images/photo-screen-mounted.jpg)
+
+<img src="images/photo-screen-ports.jpg" alt="Screen connections" width="300">
 
 ### 5. Test before closing
 

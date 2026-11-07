@@ -4,7 +4,7 @@ A football-field frame for the scoreboard. It hangs on a wall from two keyholes 
 kickstand. One back tray holds all the electronics. Each screen has its own field front that screws onto the tray from
 behind, and the end zones are swappable snap-in inserts.
 
-![Front](../docs/images/hero-render.png)
+![The frame on a windowsill](../docs/images/photo-final.jpg)
 
 **Size:** 280 × 150 × 42 mm. **License:** [CC BY-NC-SA 4.0](LICENSE).
 

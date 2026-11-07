@@ -109,8 +109,9 @@ body{font-family:"Board","Arial Narrow",sans-serif;color:var(--text);-webkit-fon
 #board.pinned #pin{display:block}
 #net{position:absolute;top:calc(var(--u)*2);right:calc(var(--u)*2);width:calc(var(--u)*2);height:calc(var(--u)*2);border-radius:50%;background:var(--red);display:none;z-index:5}
 #net.bad{display:block}
-#board.rzpulse{animation:rzpulse .8s ease-in-out infinite alternate}
-@keyframes rzpulse{to{box-shadow:inset 0 0 calc(var(--u)*6) var(--red)}}
+#board.rzpulse::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:9;box-shadow:inset 0 0 calc(var(--u)*6) var(--red);
+  opacity:0;will-change:opacity;animation:rzpulse .8s ease-in-out infinite alternate}
+@keyframes rzpulse{to{opacity:1}}
 
 /* ---------- overlay animations ---------- */
 #overlay{position:absolute;inset:0;pointer-events:none;display:none;z-index:10;overflow:hidden;--tc:#1b2330;--ta:#ffd21f}
@@ -119,7 +120,7 @@ body{font-family:"Board","Arial Narrow",sans-serif;color:var(--text);-webkit-fon
 #overlay.show.out{animation:fadeOut .4s forwards}
 @keyframes wipe{from{clip-path:polygon(0 0,0 0,-20% 100%,-20% 100%)}to{clip-path:polygon(0 0,120% 0,100% 100%,0 100%)}}
 @keyframes fadeOut{to{opacity:0}}
-.stripes{position:absolute;inset:-50% -60%;background:repeating-linear-gradient(115deg,rgba(255,255,255,.09) 0 calc(var(--u)*10),transparent calc(var(--u)*10) calc(var(--u)*20));animation:slide 1.1s linear infinite}
+.stripes{position:absolute;inset:-50% -60%;background:repeating-linear-gradient(115deg,rgba(255,255,255,.09) 0 calc(var(--u)*10),transparent calc(var(--u)*10) calc(var(--u)*20));animation:slide 1.1s linear infinite;will-change:transform}
 @keyframes slide{to{transform:translateX(calc(var(--u)*22.07))}}
 .flash{position:absolute;inset:0;background:#fff;opacity:0;animation:flash .7s ease-out}
 .k-touchdown .flash{animation:flash2 1.3s ease-out}
@@ -135,8 +136,9 @@ body{font-family:"Board","Arial Narrow",sans-serif;color:var(--text);-webkit-fon
 .ovtext.long{font-size:calc(var(--u)*22)}
 .ovtext span{display:inline-block;animation:pop .55s cubic-bezier(.2,1.6,.4,1) both}
 @keyframes pop{from{opacity:0;transform:scale(2.6) translateY(calc(var(--u)*-6))}to{opacity:1;transform:none}}
-.k-touchdown .ovtext{animation:pulse .7s 1.2s ease-in-out infinite alternate}
-@keyframes pulse{to{transform:scale(1.05);text-shadow:0 0 calc(var(--u)*6) var(--ta)}}
+.k-touchdown .ovtext{animation:pulse .7s 1.2s ease-in-out infinite alternate;will-change:transform;
+  text-shadow:0 calc(var(--u)*.8) 0 rgba(0,0,0,.35),0 0 calc(var(--u)*6) var(--ta)}
+@keyframes pulse{to{transform:scale(1.05)}}
 .ovsub{display:inline-block;margin-top:calc(var(--u)*2.5);font-size:calc(var(--u)*8);font-weight:700;letter-spacing:.12em;color:#fff;
   background:rgba(0,0,0,.28);padding:calc(var(--u)*.6) calc(var(--u)*3);border-radius:calc(var(--u)*1);animation:up .5s .75s both}
 .ovsub:empty{display:none}
