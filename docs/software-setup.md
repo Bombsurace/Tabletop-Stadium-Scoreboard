@@ -150,7 +150,8 @@ sudo visudo -cf /etc/sudoers.d/scoreboard-wifi
 This helper edits `/etc/wpa_supplicant/wpa_supplicant.conf` (as DietPi and Raspberry Pi OS Bullseye use). Systems that
 manage Wi-Fi with NetworkManager aren't supported by the on-screen Wi-Fi setup yet.
 
-Reboot: `sudo reboot`.
+Reboot: `sudo reboot`. On DietPi, if that prints a *login1.service* error and doesn't restart, use
+`sudo systemctl reboot --force`.
 
 **Low-memory boards** (512 MB, like the Pi Zero 2 W): raise swap to 512 MB. DietPi: `dietpi-drive_manager` → swap file.
 Raspberry Pi OS: set `CONF_SWAPSIZE=512` in `/etc/dphys-swapfile`, then `sudo systemctl restart dphys-swapfile`.

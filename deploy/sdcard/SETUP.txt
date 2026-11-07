@@ -38,5 +38,5 @@ Full guide with pictures: docs/software-setup.md
    menu shows the board's address and a QR code for the settings page on your
    phone.
 
-Log in from a computer:  ssh dietpi@scoreboard   (or ssh dietpi@<address from the menu>)
+Log in from a computer:  ssh dietpi@<address from the menu>   (dietpi@scoreboard works on some networks)
 Setup log on the board:  cat /var/tmp/dietpi/logs/scoreboard-setup.log

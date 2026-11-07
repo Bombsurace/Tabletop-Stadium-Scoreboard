@@ -18,7 +18,7 @@ Prev and Next **lock** the game on screen. It goes back to Auto 5 minutes after 
 
 <img src="images/mockup-phone.png" alt="Settings on a phone" width="220" align="right">
 
-Scan the QR code in quick settings, or open `http://scoreboard:8080/settings` (or `http://<board address>:8080/settings`)
+Scan the QR code in quick settings, or open `http://<board address>:8080/settings`
 on any device on the same Wi-Fi.
 
 ### Keyboard (when testing on a computer)

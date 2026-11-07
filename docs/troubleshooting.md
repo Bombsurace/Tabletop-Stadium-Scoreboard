@@ -1,7 +1,7 @@
 # Troubleshooting
 
-Find your symptom below. Most fixes need SSH: from a computer on the same Wi-Fi, run `ssh dietpi@scoreboard` (or
-`ssh dietpi@<address>`; the address is in quick settings, by pressing and holding the screen).
+Find your symptom below. Most fixes need SSH: from a computer on the same Wi-Fi, run `ssh dietpi@<address>`. The address is in quick settings
+(press and hold the screen). `ssh dietpi@scoreboard` also works on some networks.
 
 **Still stuck?** Open an [issue](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/issues/new/choose) and include the output of
 the [log commands](#collecting-logs).
@@ -13,6 +13,7 @@ the [log commands](#collecting-logs).
 - [Data and display](#data-and-display)
 - [Printing](#printing)
 - [Collecting logs](#collecting-logs)
+- [Copying a changed file to the board](#copying-a-changed-file-to-the-board)
 
 ---
 
@@ -127,6 +128,10 @@ Screens vary a little. The 7" front is tuned for the tested Hosyond (`mount_shif
 
 ## Wi-Fi and network
 
+### `ssh dietpi@scoreboard` says "Could not resolve hostname"
+
+Some routers don't share device names. Use the board's address instead: `ssh dietpi@192.168.x.x`.
+
 ### I can't find the board's address
 
 Press and hold the screen: quick settings show it. Or look in your router's app for a device named `scoreboard`.
@@ -221,3 +226,16 @@ cat /tmp/kiosk.log | tail -20
 ```
 
 They don't contain passwords. Remove your network name if you'd rather not share it.
+
+## Copying a changed file to the board
+
+From Windows Command Prompt (use your board's address and your own path):
+
+```
+scp F:\path\to\nfl-scoreboard\static\board.css dietpi@192.168.x.x:/home/dietpi/
+ssh dietpi@192.168.x.x
+cp ~/board.css ~/nfl-scoreboard/static/board.css && sudo reboot
+```
+
+If `sudo reboot` prints `Failed to set wall message` or a `login1.service` error, that's a harmless DietPi quirk (it
+has no login service). The board usually restarts anyway. If it doesn't, run `sudo systemctl reboot --force`.
