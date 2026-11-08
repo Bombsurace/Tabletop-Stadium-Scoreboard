@@ -76,6 +76,7 @@ matches `back_tray.stl` to within about 0.1%. See [frame/openscad/README.md](../
 ## Releasing
 
 1. Update `CHANGELOG.md`.
-2. Tag: `git tag v1.1.0 && git push --tags`.
+2. Either tag it (`git tag v1.1.0 && git push --tags`), or on GitHub open **Releases → Draft a new release**, type a
+   new tag such as `v1.1.0`, and click **Publish release**.
 3. The release workflow builds `Automation_Custom_Script.sh` and a zip of the print files and attaches them to the
    GitHub Release.

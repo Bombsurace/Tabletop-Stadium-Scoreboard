@@ -2,6 +2,8 @@ name: Release
 on:
   push:
     tags: ["v*"]
+  release:
+    types: [published]     # also when a release is made on the GitHub website
 
 permissions:
   contents: write
@@ -21,7 +23,8 @@ jobs:
           zip -r ../dist/openscad-customizers-${GITHUB_REF_NAME}.zip openscad LICENSE
       - uses: softprops/action-gh-release@v2
         with:
-          generate_release_notes: true
+          tag_name: ${{ github.ref_name }}
+          generate_release_notes: ${{ github.event_name == 'push' }}
           files: |
             dist/Automation_Custom_Script.sh
             dist/print-files-*.zip
