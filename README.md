@@ -119,6 +119,11 @@ and Wi-Fi.</td>
 | 4. Wire and assemble | 30 min | [Assembly guide](docs/assembly.md) |
 | 5. Set your teams | 2 min | [Using the board](docs/using.md) |
 
+> [!IMPORTANT]
+> **Power it with a USB-A charger (the rectangular plug) and a USB-A to USB-C cable.** The tested build uses a simple
+> 2-wire USB-C socket, and a USB-C to USB-C charger (like most phone and laptop bricks) will **not** turn it on.
+> A breakout board that works with any USB-C charger is planned; see [no power](docs/troubleshooting.md#no-power).
+
 **Tested build:** Orange Pi Zero 2W (1 GB) + Hosyond 7" 1024×600 HDMI touchscreen + DietPi, printed in PLA on a Bambu
 Lab printer. Other parts that should work are marked *untested* in the guides.
 

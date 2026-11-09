@@ -12,7 +12,7 @@ Set up the SD card first ([software setup](software-setup.md)) so you can test b
 ## Wiring
 
 ```
-USB charger ──► USB-C POWER socket ──► + (red) ──► ON/OFF switch ──► pigtail red  ──┐
+USB-A charger + A-to-C cable ──► USB-C POWER socket ──► + (red) ──► ON/OFF switch ──► pigtail red  ──┐
                                    └─► − (black) ─────────────────► pigtail black ─┴─► Orange Pi power port (USB-C)
 
 Orange Pi second USB-C ──► USB-C to micro-USB OTG cable ──► screen "Touch" port   (screen power + touch)
@@ -63,7 +63,7 @@ can face the board.
 
 ### 5. Test before closing
 
-Plug in the charger and flip the switch. The scoreboard should come up (the first boot after setup takes 15–20
+Plug in the **USB-A** charger with an A-to-C cable and flip the switch. The scoreboard should come up (the first boot after setup takes 15–20
 minutes). Tap the screen to check touch. If anything's wrong, see [troubleshooting](troubleshooting.md).
 
 ### 6. Close it up

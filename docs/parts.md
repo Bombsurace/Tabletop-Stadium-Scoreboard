@@ -21,6 +21,11 @@ should work but nobody has confirmed it yet; if you try one, please say how it w
 
 ## Power
 
+> [!IMPORTANT]
+> **Power it with a USB-A charger (the rectangular plug) and a USB-A to USB-C cable.** The tested build uses a simple
+> 2-wire USB-C socket, and a USB-C to USB-C charger (like most phone and laptop bricks) will **not** turn it on.
+> A breakout board that works with any USB-C charger is planned; see [no power](troubleshooting.md#no-power).
+
 Pick **one** power input. Both fit the same back tray.
 
 | Qty | Part | Notes | Status | Link |
@@ -29,7 +34,7 @@ Pick **one** power input. Both fit the same back tray.
 | — | *or* USB-C breakout board **with 5.1 kΩ resistors** | works with any USB-C charger. Fits the back tray's breakout pocket (`power = "usbc_board"` in the customizer) | *Untested* | [Amazon](https://www.amazon.com/s?k=usb+c+breakout+board+5.1k+resistor&tag=bombsurace0c-20) |
 | 1 | **KCD11 2-pin rocker switch** (14 × 9 mm hole) | snaps into the side wall | Tested | [Amazon](https://link.amazon/B0aT9bRm1) |
 | 1 | USB-C male to 2-wire pigtail (or a cut USB-C cable) | carries power from the switch to the Orange Pi | Tested | [Amazon](https://www.amazon.com/s?k=usb+c+male+pigtail+2+wire&tag=bombsurace0c-20) |
-| 1 | 5 V 3 A USB charger | with the snap-in socket: a USB-A charger and an A-to-C cable | Tested | [Amazon](https://www.amazon.com/s?k=5v+3a+usb+wall+charger&tag=bombsurace0c-20) |
+| 1 | **5 V 3 A USB-A charger + USB-A to USB-C cable** | ⚠️ required with the snap-in socket. A USB-C to USB-C charger will not power it | Tested | [Amazon](https://www.amazon.com/s?k=5v+3a+usb+wall+charger&tag=bombsurace0c-20) |
 
 ## Hardware
 

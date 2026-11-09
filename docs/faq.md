@@ -19,6 +19,11 @@ The software adapts to any screen shape. It has layouts for 1024×600, 800×480,
 automatically. The frame currently has fronts for the Hosyond 7" (tested) and Waveshare 7.9" bar (untested). A front
 customizer for other screens is planned.
 
+**Why won't it turn on with my USB-C charger?**
+The tested build uses a 2-wire USB-C socket without the resistors a USB-C to USB-C charger looks for, so those
+chargers never turn on. Use a USB-A charger and a USB-A to USB-C cable. See
+[troubleshooting](troubleshooting.md#no-power).
+
 **Does it need a subscription or an account?**
 No. It reads ESPN's free public scoreboard feed. No account, no API key, and nothing is sent anywhere.
 
