@@ -15,7 +15,7 @@ Set up the SD card first ([software setup](software-setup.md)) so you can test b
 USB charger ──► USB-C POWER socket ──► + (red) ──► ON/OFF switch ──► pigtail red  ──┐
                                    └─► − (black) ─────────────────► pigtail black ─┴─► Orange Pi power port (USB-C)
 
-Orange Pi second USB-C ──► 90° USB-C to micro-USB OTG cable ──► screen "Touch" port   (screen power + touch)
+Orange Pi second USB-C ──► USB-C to micro-USB OTG cable ──► screen "Touch" port   (screen power + touch)
 Orange Pi mini-HDMI    ──► 90° FPC ribbon                  ──► screen HDMI
 ```
 
