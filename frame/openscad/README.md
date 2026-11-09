@@ -1,12 +1,17 @@
-# OpenSCAD customizers (3D parts only)
+# OpenSCAD customizers (3D parts only, beta)
+
+> [!NOTE]
+> **Beta.** The customizers haven't been checked with real prints yet. For the tested parts, download the print
+> files from [MakerWorld](https://makerworld.com/en/models/3577626-tabletop-stadium-scoreboard-gamecast-desk-display). Try a customizer only if you need something different, and print the fit tests first.
+
 
 These files only make 3D parts. They don't touch the scoreboard software. License: [CC BY-NC-SA 4.0](../LICENSE). `frame/field_frame.py` is still where the tested
 prints come from and is used to check that the OpenSCAD defaults match.
 
 | File | Makes | Status |
 |---|---|---|
-| `endzone_customizer.scad` | snap-in end zone inserts with flush two-color lettering | tested on MakerWorld |
-| `back_customizer.scad` | back tray: board presets and rotation, power/switch holes, kickstand on/off, hinge tightness | default matches the tested print |
+| `endzone_customizer.scad` | snap-in end zone inserts with flush two-color lettering | beta: generates on MakerWorld, not yet print-tested |
+| `back_customizer.scad` | back tray: board presets and rotation, power/switch holes, kickstand on/off, hinge tightness | beta: default matches the tested print; other settings not yet print-tested |
 | `front_customizer.scad` | field front: screen presets or custom screen | planned |
 
 ## End zones

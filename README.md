@@ -14,7 +14,7 @@ It runs on a $20 single-board computer and a 7" touchscreen.
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776ab.svg)](requirements.txt)
 [![Checks](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/actions/workflows/checks.yml/badge.svg)](https://github.com/Bombsurace/Tabletop-Stadium-Scoreboard/actions/workflows/checks.yml)
 
-[**Build guide**](#build-it) · [**Parts list**](docs/parts.md) · [**Troubleshooting**](docs/troubleshooting.md) · [**MakerWorld**](#) · [**FAQ**](docs/faq.md)
+[**Build guide**](#build-it) · [**Parts list**](docs/parts.md) · [**Troubleshooting**](docs/troubleshooting.md) · [**MakerWorld**](https://makerworld.com/en/models/3577626-tabletop-stadium-scoreboard-gamecast-desk-display) · [**FAQ**](docs/faq.md)
 
 </div>
 
@@ -66,7 +66,7 @@ and Wi-Fi.</td>
   don't need a keyboard or SSH.
 - **Prints with no supports.** The kickstand prints in place and clicks shut. The end zones snap in, with two-color
   lettering. It hangs on the wall from two keyholes.
-- **Customizable.** OpenSCAD customizers make your own end zone text, a back for a different board, or move the power
+- **Customizable (beta).** OpenSCAD customizers make your own end zone text, a back for a different board, or move the power
   and switch holes.
 
 ---
@@ -95,7 +95,7 @@ and Wi-Fi.</td>
 <tr>
 <td><b>Desk.</b> A print-in-place kickstand leans it back about 22°, and clicks shut when folded.</td>
 <td><b>Power</b> switch and USB-C socket snap into the side wall.</td>
-<td><b>Swappable end zones.</b> They snap in, with flush two-color lettering. Make your own in the customizer.</td>
+<td><b>Swappable end zones.</b> They snap in, with flush two-color lettering. Make your own in the customizer (beta).</td>
 </tr>
 <tr>
 <td colspan="2"><img src="docs/images/photo-open.jpg" alt="Opened up: back tray and front with the screen"></td>
@@ -114,7 +114,7 @@ and Wi-Fi.</td>
 | Step | Time | Guide |
 |---|---|---|
 | 1. Get the parts | roughly $100–130 | [Parts list](docs/parts.md) |
-| 2. Print the frame | a day of printing (front, back, end zones) | [Printing guide](docs/printing.md) |
+| 2. Print the frame | a day of printing (front, back, end zones) | [Print files on MakerWorld](https://makerworld.com/en/models/3577626-tabletop-stadium-scoreboard-gamecast-desk-display) · [Printing guide](docs/printing.md) |
 | 3. Set up the SD card | 10 min + a 20 min wait | [Software setup](docs/software-setup.md) |
 | 4. Wire and assemble | 30 min | [Assembly guide](docs/assembly.md) |
 | 5. Set your teams | 2 min | [Using the board](docs/using.md) |
@@ -167,7 +167,7 @@ size, set the browser's device toolbar to **1024 × 600**.
 | [Using the board](docs/using.md) | touch controls, what it shows when, every setting |
 | [Troubleshooting](docs/troubleshooting.md) | no power, touch in the wrong spot, Wi-Fi, blank screen, print problems |
 | [FAQ](docs/faq.md) | other screens and boards, other sports, cost, privacy |
-| [Customizing the models](frame/openscad/README.md) | OpenSCAD customizers and the CadQuery source |
+| [Customizing the models](frame/openscad/README.md) | OpenSCAD customizers (beta) and the CadQuery source |
 | [Development](docs/development.md) | how the code is laid out, the API, building the STLs |
 
 ---
@@ -177,9 +177,10 @@ size, set the browser's device toolbar to **1024 × 600**.
 - [x] NFL gamecast, scores, standings, animations
 - [x] Field frame: desk kickstand and wall keyholes, snap-in end zones
 - [x] Self-installing SD card, Wi-Fi setup from the screen
-- [x] OpenSCAD customizers: end zones, back tray
+- [x] OpenSCAD customizers: end zones, back tray (beta, being print-tested)
 - [ ] OpenSCAD customizer for the front (other screen sizes)
 - [ ] USB-C power board that works with any USB-C charger
+- [ ] Split frame for 256 mm printers (A1, P1, P2S, X1)
 - [ ] More sports: MLB, NHL, NBA, then college
 - [ ] Optional LED end zones
 

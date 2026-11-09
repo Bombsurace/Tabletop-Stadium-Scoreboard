@@ -10,7 +10,8 @@ behind, and the end zones are swappable snap-in inserts.
 
 - **To print it:** [printing guide](../docs/printing.md)
 - **To put it together:** [assembly guide](../docs/assembly.md)
-- **To customize it without code:** [OpenSCAD customizers](openscad/README.md)
+- **To download the tested print files:** [MakerWorld](https://makerworld.com/en/models/3577626-tabletop-stadium-scoreboard-gamecast-desk-display)
+- **To customize it without code:** [OpenSCAD customizers](openscad/README.md) (beta)
 
 ## What's here
 

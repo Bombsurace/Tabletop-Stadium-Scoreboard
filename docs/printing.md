@@ -1,9 +1,12 @@
 # Printing guide
 
-All the print files are in [`frame/stl/`](../frame/stl). Every file is already turned the right way to print, and
+**Easiest:** download the ready-to-print project from [MakerWorld](https://makerworld.com/en/models/3577626-tabletop-stadium-scoreboard-gamecast-desk-display). It has every plate laid out, in two colors, with
+the print settings. The same parts are also in [`frame/stl/`](../frame/stl). Every file is already turned the right way to print, and
 **nothing needs supports**. STEP files for Fusion 360 and other CAD apps sit next to every STL.
 
-**Frame size:** 280 × 150 × 42 mm. The largest part (280 × 150) needs a bed of at least 290 × 160 mm.
+**Frame size:** 280 × 150 × 42 mm. The front and back tray (280 × 150) need a bed of at least about 290 × 160 mm:
+Bambu H2D, H2S, H2C or A2L, or a similar large printer. They don't fit 256 mm beds (A1, P1, P2S, X1, X2D). The end
+zones, clamps and fit tests fit any printer.
 
 ![Everything you print](images/mockup-parts.png)
 
@@ -24,7 +27,7 @@ All the print files are in [`frame/stl/`](../frame/stl). Every file is already t
 |---|---|---|
 | `back_tray.stl` | 1 | holds all the electronics. The kickstand prints **in place** with a tight hinge (0.30 mm) and clicks shut |
 | `front_standard7_2color.3mf` | 1 | the field for the 7" screen, **two colors**: one object with two parts. Set the "lines" part to white |
-| `endzone_left_2color.3mf`, `endzone_right_2color.3mf` | 1 each | snap-in end zones with flush lettering. Set the "letters" part to white. Make your own text with the [customizer](../frame/openscad/README.md) |
+| `endzone_left_2color.3mf`, `endzone_right_2color.3mf` | 1 each | snap-in end zones with flush lettering. Set the "letters" part to white. Make your own text with the [customizer](../frame/openscad/README.md) (beta) |
 | `pi_clamp.stl` | 2 | swivel clamps that hold the Orange Pi down |
 
 **Single-color printer?** Use `front_standard7.stl` instead of the 3MF: the yard lines come out as grooves, and you can

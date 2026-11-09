@@ -39,8 +39,12 @@ Football (NFL) for now. Baseball, hockey, basketball and college are planned, us
 new fronts. Watch or star the repository to hear about them.
 
 **Can I put my team's name on the end zones?**
-Yes. Use the [end zone customizer](../frame/openscad/README.md) (on MakerWorld or in desktop OpenSCAD) to make any text
-with flush two-color lettering.
+Yes. Use the [end zone customizer](../frame/openscad/README.md) (in desktop OpenSCAD) to make any text with flush
+two-color lettering. It's in beta: it should fit, but hasn't been checked with real prints yet.
+
+**Which printers can print it?**
+The front and back tray need a bed of about 290 × 160 mm or bigger: Bambu H2D, H2S, H2C or A2L, or a similar large
+printer. Everything else fits any printer. A split version for 256 mm beds (A1, P1, P2S, X1) is on the idea list.
 
 **Can I sell prints?**
 The 3D models are licensed [CC BY-NC-SA 4.0](../frame/LICENSE): non-commercial. Printing for yourself and friends is
