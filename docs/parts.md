@@ -34,7 +34,7 @@ Pick **one** power input. Both fit the same back tray.
 | — | *or* USB-C breakout board **with 5.1 kΩ resistors** | works with any USB-C charger. Fits the back tray's breakout pocket (`power = "usbc_board"` in the customizer) | *Untested* | [Amazon](https://www.amazon.com/s?k=usb+c+breakout+board+5.1k+resistor&tag=bombsurace0c-20) |
 | 1 | **KCD11 2-pin rocker switch** (14 × 9 mm hole) | snaps into the side wall | Tested | [Amazon](https://link.amazon/B0aT9bRm1) |
 | 1 | USB-C male to 2-wire pigtail (or a cut USB-C cable) | carries power from the switch to the Orange Pi | Tested | [Amazon](https://www.amazon.com/s?k=usb+c+male+pigtail+2+wire&tag=bombsurace0c-20) |
-| 1 | **5 V 3 A USB-A charger + USB-A to USB-C cable** | ⚠️ required with the snap-in socket. A USB-C to USB-C charger will not power it | Tested | [Amazon](https://www.amazon.com/s?k=5v+3a+usb+wall+charger&tag=bombsurace0c-20) |
+| 1 | **5 V 3 A USB-A charger + USB-A to USB-C cable** | ⚠️ required with the snap-in socket. A USB-C to USB-C charger will not power it. Any USB-A brick rated 5 V 3 A works; the linked one is a suggestion | Tested (type) | [Amazon](https://link.amazon/B0imYGY5D) |
 
 ## Hardware
 
